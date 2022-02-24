@@ -1,4 +1,4 @@
-package com.ibm.appfinal;
+package com.ibm.newsapp;
 
 import android.content.Context;
 

@@ -12,13 +12,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".noticia">
+    tools:context=".NoticiaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".noticia"
+        tools:context=".NoticiaActivity"
         tools:layout_editor_absoluteX="-16dp">
 
         <Button

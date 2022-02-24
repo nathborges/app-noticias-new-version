@@ -1,4 +1,4 @@
-package com.ibm.appfinal;
+package com.ibm.newsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class saibaMais extends AppCompatActivity {
+public class SaibaMaisActivity extends AppCompatActivity {
 
     Button botaoVoltar;
 

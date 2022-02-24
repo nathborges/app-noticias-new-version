@@ -1,4 +1,4 @@
-package com.ibm.appfinal;
+package com.ibm.newsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class telaUltima extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity {
 
     private VideoView videoView;
 

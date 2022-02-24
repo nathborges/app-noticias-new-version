@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ibm.appfinal">
+    package="com.ibm.newsapp">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppFinal">
         <activity
-            android:name=".telaUltima"
+            android:name="com.ibm.newsapp.VideoActivity"
             android:exported="false" />
         <activity
-            android:name=".telaSurpreenda"
+            android:name="com.ibm.newsapp.SurpreendaActivity"
             android:exported="false" />
         <activity
-            android:name=".noticia"
+            android:name="com.ibm.newsapp.NoticiaActivity"
             android:exported="false" />
         <activity
-            android:name=".saibaMais"
+            android:name="com.ibm.newsapp.SaibaMaisActivity"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name="com.ibm.newsapp.LoginActivity"
             android:exported="true"
             android:screenOrientation="sensor">
             <intent-filter>

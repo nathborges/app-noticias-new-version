@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:onClick="abrirVideo"
     android:orientation="vertical"
-    tools:context=".telaSurpreenda">
+    tools:context=".SurpreendaActivity">
 
     <ImageView
         android:id="@+id/imageView5"

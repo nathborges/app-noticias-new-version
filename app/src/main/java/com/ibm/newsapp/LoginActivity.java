@@ -1,4 +1,4 @@
-package com.ibm.appfinal;
+package com.ibm.newsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
         EditText email, senha;
         Button botaoEntrar;
@@ -28,7 +28,7 @@ public class login extends AppCompatActivity {
                 botaoEntrar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                                startActivity(new Intent (login.this, noticia.class));
+                                startActivity(new Intent (LoginActivity.this, NoticiaActivity.class));
 
 
                         }

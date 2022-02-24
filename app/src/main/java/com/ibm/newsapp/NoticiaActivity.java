@@ -1,4 +1,4 @@
-package com.ibm.appfinal;
+package com.ibm.newsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class noticia extends AppCompatActivity {
+public class NoticiaActivity extends AppCompatActivity {
 
     Button botaoSaibaMais, botaoSupreenda, botaoEntrar;
 
@@ -21,7 +21,7 @@ public class noticia extends AppCompatActivity {
         botaoSaibaMais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent saibaMais = new Intent(getApplicationContext(), com.ibm.appfinal.saibaMais.class);
+                Intent saibaMais = new Intent(getApplicationContext(), SaibaMaisActivity.class);
                 startActivity(saibaMais);
 
             }
@@ -30,7 +30,7 @@ public class noticia extends AppCompatActivity {
         botaoSupreenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(noticia.this, telaSurpreenda.class);
+                Intent it = new Intent(NoticiaActivity.this, SurpreendaActivity.class);
                 startActivity(it);
 
             }
