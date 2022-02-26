@@ -10,19 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppFinal">
         <activity
-            android:name="com.ibm.newsapp.VideoActivity"
+            android:name=".TodasNoticiasActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.SurpreendaActivity"
+            android:name=".VideoActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.NoticiaActivity"
+            android:name=".SurpreendaActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.SaibaMaisActivity"
+            android:name=".NoticiaActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.LoginActivity"
+            android:name=".SaibaMaisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
             android:screenOrientation="sensor">
             <intent-filter>
