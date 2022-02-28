@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/button.xml" value="0.125" />
-        <entry key="app/src/main/res/drawable/separator.xml" value="0.152" />
+
+        <entry key="app/src/main/res/font/font.xml" value="0.20949123557075675" />
+        <entry key="app/src/main/res/font/visby.xml" value="1.4964285714285714" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_noticia.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/activity_ok.xml" value="0.165" />
@@ -12,6 +13,8 @@
         <entry key="app/src/main/res/layout/activity_saiba.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_telaSurpreenda.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_tela_surpreenda.xml" value="0.17777777777777778" />
+        <entry key="app/src/main/res/layout/activity_telainicio.xml" value="0.17133956386292834" />
+        <entry key="app/src/main/res/layout/activity_todas_noticias.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ultima.xml" value="0.234375" />
       </map>
     </option>
