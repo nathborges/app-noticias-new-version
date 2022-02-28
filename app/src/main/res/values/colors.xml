@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="roxinho">#A95EE0</color>
+    <color name="purple1">#0D032B</color>
+    <color name="purple">#6E6196</color>
+    <color name="darkPurple">#520C61</color>
+    <color name="prettyBlue">#12033F</color>
+    <color name="gray">#545454</color>
 </resources>
