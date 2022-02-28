@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font="@font/visbybold" />
+    <font
+        android:font="@font/visbyextrabold" />
+    <font
+        android:font="@font/visbysemibold" />
+    <font
+        android:font="@font/visbymedium" />
+    <font
+        android:font="@font/visbyregular" />
+</font-family>
