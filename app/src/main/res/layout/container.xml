@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="900dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="900dp"
+    android:layout_marginTop="30dp"
+    android:id="@+id/card"
+    android:orientation="vertical"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/backgroundCardGrey">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imageInCard"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/nft" />
+    <LinearLayout
+        android:id="@+id/linearLayoutInCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/titleInCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visbysemibold"
+            android:text="Moraes suspende quebra de sigilo telemático de Bolsonaro aprovado pela CPI da Pandemia"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+        <TextView
+            android:id="@+id/textInCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/visbyregular"
+            android:text="CNN Brasil - Política"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
