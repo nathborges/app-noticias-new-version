@@ -7,109 +7,141 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/text_email"
-        style="@style/Edit_Text"
-        android:layout_marginTop="64dp"
-        android:hint="Email:"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <EditText
+            android:id="@+id/text_email"
+            style="@style/Edit_Text"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/visbyregular"
+            android:hint="Email:"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/text_senha"
-        style="@style/Edit_Text"
-        android:hint="Senha:"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_email" />
+        <EditText
+            android:id="@+id/text_senha"
+            style="@style/Edit_Text"
+            android:fontFamily="@font/visbyregular"
+            android:hint="Senha:"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="332dp"
-        android:layout_height="51dp"
-        android:text="Faça o login para continuar"
-        android:textAlignment="viewStart"
-        android:textColor="@color/purple"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bemVindo" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="332dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/visbysemibold"
+            android:text="Faça o login para continuar"
+            android:textAlignment="viewStart"
+            android:textColor="@color/purple"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bemVindo" />
 
-    <TextView
-        android:id="@+id/bemVindo"
-        android:layout_width="269dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="68dp"
-        android:text="Bem vindo!"
-        android:textAlignment="viewStart"
-        android:textColor="@color/black"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.281"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/bemVindo"
+            android:layout_width="331dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="68dp"
+            android:fontFamily="@font/visbybold"
+            android:text="Bem vindo!"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_entrar"
-        style="@style/Button"
-        android:layout_marginTop="52dp"
-        android:text="Login"
-        android:textColor="@color/white"
-        app:iconTint="@color/darkPurple"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_senha"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_entrar"
+            style="@style/Button"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/visbybold"
+            android:text="Login"
+            android:textColor="@color/white"
+            app:iconTint="@color/darkPurple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_senha" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:text="Esqueci a senha"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bt_entrar" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:fontFamily="@font/visbysemibold"
+            android:text="Esqueci a senha"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bt_entrar" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="116dp"
-        android:background="?android:attr/listDivider"
-        android:backgroundTint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="116dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="332dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:text="Não tem uma conta? Cadastre-se"
-        android:textAlignment="center"
-        android:textColor="#2E2E2E"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="156dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/visbyregular"
+            android:text="Não tem uma conta? "
+            android:textAlignment="textEnd"
+            android:textColor="#2E2E2E"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="96dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/visbyregular"
+            android:text="@string/cadastre"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkPurple"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

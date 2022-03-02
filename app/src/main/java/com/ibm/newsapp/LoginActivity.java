@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Objects;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
                 senha = (EditText) findViewById(R.id.text_senha);
                 botaoEntrar = (Button) findViewById(R.id.bt_entrar);
 
-
+                Objects.requireNonNull(getSupportActionBar()).hide();
 
                 botaoEntrar.setOnClickListener(new View.OnClickListener() {
                         @Override
