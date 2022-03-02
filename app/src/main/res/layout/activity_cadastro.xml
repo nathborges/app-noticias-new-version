@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CadastroActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_entrar3"
+                style="@style/Button"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="60dp"
+                android:fontFamily="@font/visbyextrabold"
+                android:text="Cadastre-se"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:iconTint="@color/darkPurple"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCheckPassword" />
+
+            <EditText
+                android:id="@+id/editTextNome"
+                android:layout_width="349dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:fontFamily="@font/visbybold"
+                android:hint="nome"
+                android:inputType="textPersonName"
+                android:textColorHint="#2B2D41"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/criarConta"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="350dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:fontFamily="@font/visbybold"
+                android:hint="senha"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#2B2D41"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+            <EditText
+                android:id="@+id/editTextCheckPassword"
+                android:layout_width="350dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:fontFamily="@font/visbybold"
+                android:hint="confirmar a senha"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#2B2D41"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="350dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:fontFamily="@font/visbybold"
+                android:hint="email@email.com.br"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#2B2D41"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
+
+
+            <TextView
+                android:id="@+id/olaText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/visbybold"
+                android:text="Olá!"
+                android:textAlignment="viewStart"
+                android:textColor="#2B2D41"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/criarConta"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/visbybold"
+                android:text="Crie uma nova conta"
+                android:textAlignment="viewStart"
+                android:textColor="@color/purple"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/olaText"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
