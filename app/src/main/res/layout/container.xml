@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/visbysemibold"
-            android:text="Moraes suspende quebra de sigilo telemático de Bolsonaro aprovado pela CPI da Pandemia"
+            android:text="Title text"
             android:textColor="@color/black"
             android:textSize="13sp" />
         <TextView
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/visbyregular"
-            android:text="CNN Brasil - Política"
+            android:text="Source and category text"
             android:textColor="@color/black"
             android:textSize="13sp" />
     </LinearLayout>

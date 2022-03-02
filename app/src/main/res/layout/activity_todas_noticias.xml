@@ -78,8 +78,7 @@
             android:id="@+id/childOfScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:showDividers="middle|beginning|end"
-            android:divider="@drawable/divider8p"
+            android:showDividers="middle|beginning|end"android:divider="@drawable/divider8p"
             android:paddingHorizontal="30dp"
             android:paddingBottom="140dp"
             android:orientation="vertical" />

@@ -17,29 +17,18 @@ public class TodasNoticiasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todas_noticias);
-        LinearLayout child = findViewById(R.id.childOfScrollView);
+        LinearLayout childOfScrollView = findViewById(R.id.childOfScrollView);
 
         LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        CardView cardView1 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView cardView2 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView cardView3 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView cardView4 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView cardView5 = (CardView) inflater.inflate(R.layout.container, null);
+        CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
 
-        child.addView(cardView1);
-        child.addView(cardView2);
-        child.addView(cardView3);
-        child.addView(cardView4);
-        child.addView(cardView5);
-
-        changeImage(R.drawable.foto, cardView1);
-        changeTitle("Teste", cardView1);
-        changeText("aaaaaaaaa", cardView1);
+        // Adicionei na ScrollView
+        childOfScrollView.addView(aleatorio);
     }
 
-    protected void changeTitle(CharSequence title, CardView cardView) {
+    protected void changeTitle(CharSequence text, CardView cardView) {
         TextView textView = (TextView) cardView.findViewById(R.id.titleInCard);
-        textView.setText(title);
+        textView.setText(text);
     }
 
     protected void changeText(CharSequence text, CardView cardView) {
