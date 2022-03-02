@@ -17,9 +17,8 @@ public class VideoActivity extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
 
-        videoView.setMediaController(new MediaController(this) );
-        videoView.setVideoPath("android.resource:" + getPackageName() + "/" + R.raw.nft);
-        videoView.start();
+//        videoView.setVideoPath("android.resource:" + getPackageName() + "/" + R.raw.nft);
+//        videoView.start();
 
     }
 }

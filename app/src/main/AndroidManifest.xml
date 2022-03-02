@@ -11,7 +11,7 @@
         android:theme="@style/Theme.AppFinal">
         <activity
             android:name=".TodasNoticiasActivity"
-            android:exported="true">
+            android:exported="false">
         </activity>
         <activity
             android:name=".VideoActivity"
@@ -19,20 +19,25 @@
         <activity
             android:name=".CategoriasActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".NoticiaActivity"
             android:exported="false" />
         <activity
+            android:name="com.ibm.newsapp.InicioActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SaibaMaisActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="sensor">
         </activity>
     </application>
