@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/aaa"
-    tools:context=".TodasNoticiasActivity">
+    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/topmenu"
-        android:layout_width="0dp"
+        android:id="@+id/constraitMenu"
+        android:layout_width="match_parent"
         android:layout_height="141dp"
         android:layout_marginTop="1dp"
         android:paddingHorizontal="23dp"
@@ -33,7 +31,6 @@
             app:layout_constraintBottom_toTopOf="@+id/menuLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/categoriesButton"
                 android:layout_height="wrap_content"
@@ -46,7 +43,6 @@
                 android:textAllCaps="false"
                 android:textColor="@color/azul_escuro"
                 android:textSize="16sp" />
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lastnewsButton"
                 android:layout_height="wrap_content"
@@ -65,23 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/azul_escuro"
-            app:layout_constraintBottom_toBottomOf="@+id/topmenu"
+            app:layout_constraintBottom_toBottomOf="@+id/constraitMenu"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ultimaNoticiasScrollView"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@+id/topmenu">
-        <LinearLayout
-            android:id="@+id/childOfScrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:showDividers="middle|beginning|end"
-            android:divider="@drawable/divider8p"
-            android:paddingHorizontal="30dp"
-            android:paddingBottom="140dp"
-            android:orientation="vertical" />
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
