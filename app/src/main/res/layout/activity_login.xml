@@ -15,20 +15,24 @@
         <EditText
             android:id="@+id/text_email"
             style="@style/Edit_Text"
-            android:layout_marginTop="64dp"
-            android:fontFamily="@font/visbyregular"
-            android:hint="Email:"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/visbybold"
+            android:hint="email@email.com"
             android:inputType="textEmailAddress"
+            android:textColor="@color/prettyBlue"
+            android:textColorHint="@color/prettyBlue"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
             android:id="@+id/text_senha"
             style="@style/Edit_Text"
-            android:fontFamily="@font/visbyregular"
-            android:hint="Senha:"
+            android:fontFamily="@font/visbybold"
+            android:hint="senha"
             android:inputType="textPassword"
+            android:textColorHint="@color/prettyBlue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +44,11 @@
             android:layout_height="51dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/visbysemibold"
-            android:text="Faça o login para continuar"
+            android:text="Faça o login para ver notícias"
             android:textAlignment="viewStart"
             android:textColor="@color/purple"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:textSize="22sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +64,6 @@
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textSize="45sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,13 +72,18 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_entrar"
             style="@style/Button"
+            android:layout_width="241dp"
+            android:layout_height="59dp"
             android:layout_marginTop="52dp"
-            android:fontFamily="@font/visbybold"
+            android:fontFamily="@font/visbyextrabold"
+            android:padding="15dp"
             android:text="Login"
+            android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textSize="24dp"
             app:iconTint="@color/darkPurple"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_senha" />
 
@@ -83,9 +91,10 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="76dp"
             android:fontFamily="@font/visbysemibold"
             android:text="Esqueci a senha"
+            android:textSize="14dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +104,7 @@
             android:id="@+id/divider"
             android:layout_width="350dp"
             android:layout_height="1dp"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="64dp"
             android:background="?android:attr/listDivider"
             android:backgroundTint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +130,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.17" />
 
         <TextView
             android:id="@+id/textView6"
@@ -140,7 +149,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.175" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
