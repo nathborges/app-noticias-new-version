@@ -19,17 +19,24 @@
             android:name="com.ibm.newsapp.NoticiaActivity"
             android:exported="false" />
         <activity
+            android:name="com.ibm.newsapp.InicioActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
             android:name="com.ibm.newsapp.SaibaMaisActivity"
             android:exported="false" />
         <activity
             android:name="com.ibm.newsapp.LoginActivity"
             android:exported="true"
             android:screenOrientation="sensor">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
