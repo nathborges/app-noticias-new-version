@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
                 email = (EditText) findViewById(R.id.text_email);
                 senha = (EditText) findViewById(R.id.text_senha);
                 botaoEntrar = (Button) findViewById(R.id.bt_entrar);
-                cadastre = (TextView) findViewById(R.id.textView6);
+                cadastre = (TextView) findViewById(R.id.cadastreSe);
 
                 //BOTAO QUE PERMITE QUE O USER ENTRE NO APLICATIVO ATRAVÉS DE E-MAIL E SENHA
                 botaoEntrar.setOnClickListener(v -> {
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //QUANDO O USER CLICAR EM "CADASTRE-SE", SERÁ DIRECIONADO PARA A TELA DE CADASTRO **TELA DE NOTÍCIA USADA SÓ PARA TESTE**
                 cadastre.setOnClickListener(v -> {
-                        Intent intent = new Intent(LoginActivity.this, NoticiaActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                         startActivity(intent);
                 });
 
