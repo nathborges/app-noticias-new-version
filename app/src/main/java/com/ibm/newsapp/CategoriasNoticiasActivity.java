@@ -13,7 +13,3 @@ public class CategoriasNoticiasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categorias_noticias);
     }
 }
-
-
-
-
