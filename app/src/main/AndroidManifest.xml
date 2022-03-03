@@ -19,6 +19,9 @@
             android:name="com.ibm.newsapp.NoticiaActivity"
             android:exported="false" />
         <activity
+            android:name="com.ibm.newsapp.CadastroActivity"
+            android:exported="false" />
+        <activity
             android:name="com.ibm.newsapp.InicioActivity"
             android:exported="true" >
             <intent-filter>
