@@ -15,6 +15,7 @@ public class Menu extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //todo: arrumar transicao
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_menu, container, true);
         Button buttonLastNews = view.findViewById(R.id.lastnewsButton);

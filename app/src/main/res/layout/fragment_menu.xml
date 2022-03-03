@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraitMenu"
+        android:id="@+id/constraintMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
@@ -47,7 +47,7 @@
                 android:text="@string/categories_option_menu"
                 android:textAllCaps="false"
                 android:textColor="@color/azul_escuro"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/lastnewsButton"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 android:text="@string/news_option_menu"
                 android:textAllCaps="false"
                 android:textColor="@color/azul_escuro"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
         </GridLayout>
         <View
             android:id="@+id/menuLine"
