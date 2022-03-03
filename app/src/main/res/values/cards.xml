@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="primeiro_card">Tecnologia</string>
+    <style name="imagem_primeiro_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/tecnologia</item>
+    </style>
+
+    <string name="segundo_card">Economia</string>
+    <style name="imagem_segundo_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/economia</item>
+    </style>
+
+    <string name="terceiro_card">Esportes</string>
+    <style name="imagem_terceiro_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/esportes</item>
+    </style>
+
+    <string name="quarto_card">Saúde</string>
+    <style name="imagem_quarto_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/saude</item>
+    </style>
+
+    <string name="quinto_card">Política</string>
+    <style name="imagem_quinto_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/politica</item>
+    </style>
+
+    <string name="sexto_card">Clima</string>
+    <style name="imagem_sexto_card" parent="@style/Card_Image_Categories">
+        <item name="android:src">@drawable/clima</item>
+    </style>
+</resources>

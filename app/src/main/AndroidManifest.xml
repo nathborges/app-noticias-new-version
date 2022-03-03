@@ -10,19 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppFinal">
         <activity
-            android:name=".TodasNoticiasActivity"
-            android:exported="true">
+            android:name="com.ibm.newsapp.UltimasNoticiasActivity"
+            android:exported="false"
+            android:screenOrientation="sensor">
         </activity>
         <activity
-            android:name=".CategoriasActivity"
-            android:exported="true">
+            android:name="com.ibm.newsapp.CategoriasNoticiasActivity"
+            android:exported="false"
+            android:screenOrientation="sensor">
         </activity>
         <activity
             android:name="com.ibm.newsapp.NoticiaActivity"
             android:exported="false" />
         <activity
             android:name="com.ibm.newsapp.InicioActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

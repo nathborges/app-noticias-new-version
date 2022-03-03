@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.Objects;
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
                 botaoEntrar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                                startActivity(new Intent (LoginActivity.this, NoticiaActivity.class));
+                                startActivity(new Intent (LoginActivity.this, UltimasNoticiasActivity.class));
                         }
                 });
 

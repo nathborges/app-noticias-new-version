@@ -30,7 +30,7 @@ public class NoticiaActivity extends AppCompatActivity {
         botaoSupreenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(NoticiaActivity.this, CategoriasActivity.class);
+                Intent it = new Intent(NoticiaActivity.this, CategoriasNoticiasActivity.class);
                 startActivity(it);
 
             }

@@ -5,39 +5,43 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class TodasNoticiasActivity extends AppCompatActivity {
+public class UltimasNoticiasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todas_noticias);
-        LinearLayout childOfScrollView = findViewById(R.id.childOfScrollView);
+        setContentView(R.layout.activity_ultimas_noticias);
+        LinearLayout childOfScrollView = findViewById(R.id.childOfLastNewsScrollView);
 
+        //todo: contar o número de notícias na api e criar programaticamente os cards
         LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
         CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
+        CardView aleatorio1 = (CardView) inflater.inflate(R.layout.container, null);
+        CardView aleatorio2 = (CardView) inflater.inflate(R.layout.container, null);
 
-        // Adicionei na ScrollView
+        changeImage(R.drawable.tecnologia, aleatorio);
+
         childOfScrollView.addView(aleatorio);
+        childOfScrollView.addView(aleatorio1);
+        childOfScrollView.addView(aleatorio2);
     }
 
     protected void changeTitle(CharSequence text, CardView cardView) {
-        TextView textView = (TextView) cardView.findViewById(R.id.titleInCard);
+        TextView textView = cardView.findViewById(R.id.titleInCard);
         textView.setText(text);
     }
 
     protected void changeText(CharSequence text, CardView cardView) {
-        TextView textView = (TextView) cardView.findViewById(R.id.textInCard);
+        TextView textView = cardView.findViewById(R.id.textInCard);
         textView.setText(text);
     }
 
     protected void changeImage(int imageId, CardView cardView) {
-        ImageView imageView = (ImageView) cardView.findViewById(R.id.imageInCard);
+        ImageView imageView = cardView.findViewById(R.id.imageInCard);
         imageView.setImageResource(imageId);
     }
 }
