@@ -41,7 +41,6 @@
             android:name="com.ibm.newsapp.LoginActivity"
             android:exported="true"
             android:screenOrientation="sensor">
-
         </activity>
     </application>
 
