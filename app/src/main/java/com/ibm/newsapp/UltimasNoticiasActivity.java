@@ -24,6 +24,8 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         CardView aleatorio2 = (CardView) inflater.inflate(R.layout.container, null);
 
         changeImage(R.drawable.tecnologia, aleatorio);
+        changeImage(R.drawable.economia, aleatorio1);
+        changeImage(R.drawable.esportes, aleatorio2);
 
         childOfScrollView.addView(aleatorio);
         childOfScrollView.addView(aleatorio1);
