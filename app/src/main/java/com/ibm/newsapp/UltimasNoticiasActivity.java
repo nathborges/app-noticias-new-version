@@ -3,6 +3,7 @@ package com.ibm.newsapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
@@ -27,6 +28,18 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         changeImage(R.drawable.economia, aleatorio1);
         changeImage(R.drawable.esportes, aleatorio2);
 
+        aleatorio.setOnClickListener(v -> {
+            clickSelectedNews();
+        });
+
+        aleatorio1.setOnClickListener(v -> {
+            clickSelectedNews();
+        });
+
+        aleatorio2.setOnClickListener(v -> {
+            clickSelectedNews();
+        });
+
         childOfScrollView.addView(aleatorio);
         childOfScrollView.addView(aleatorio1);
         childOfScrollView.addView(aleatorio2);
@@ -45,5 +58,10 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     protected void changeImage(int imageId, CardView cardView) {
         ImageView imageView = cardView.findViewById(R.id.imageInCard);
         imageView.setImageResource(imageId);
+    }
+
+    protected void clickSelectedNews() {
+        Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
+        startActivity(intent);
     }
 }

@@ -14,7 +14,7 @@
         app:layout_constraintHeight_min="100dp"
         app:layout_constraintHeight_max="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/nft"
+        android:src="@drawable/tecnologia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/visbyregular"
-                    android:text="Gabriel Rubinsteinn"
+                    android:text="Autor da notícia"
                     />
 
                 <TextView
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/visbyregular"
-                    android:text="04/02/2022"
+                    android:text="DD/MM/YYYY"
                     android:textAlignment="viewEnd" />
 
             </LinearLayout>
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/visbysemibold"
-                android:text="Aprenda o que é NFT"
+                android:text="Título da notícia"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />
