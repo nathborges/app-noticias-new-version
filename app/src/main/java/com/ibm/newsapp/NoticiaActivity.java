@@ -39,3 +39,4 @@ public class NoticiaActivity extends AppCompatActivity {
 
 }
 
+

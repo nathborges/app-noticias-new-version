@@ -48,11 +48,11 @@ public class InicioActivity extends AppCompatActivity {
                 x2 = touchevent.getX();
                 y2 = touchevent.getY();
                 if(x1 < x2){
-                    Intent i = new Intent(InicioActivity.this, LoginActivity.class);
-                    startActivity(i);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 break;
-
         }
         return false;
     }
