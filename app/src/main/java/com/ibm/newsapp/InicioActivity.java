@@ -26,7 +26,7 @@ public class InicioActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .asGif()
-                .load(R.raw.city)
+                .load(R.raw.subway)
                 .into(imageView);
 
     }
