@@ -11,7 +11,7 @@
         <entry key="app/src/main/res/drawable/divider8p.xml" value="0.1" />
         <entry key="app/src/main/res/font/font.xml" value="0.20949123557075675" />
         <entry key="app/src/main/res/font/visby.xml" value="1.4964285714285714" />
-        <entry key="app/src/main/res/layout/activity_cadastro.xml" value="0.10047028644719966" />
+        <entry key="app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_categorias.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_categorias_noticias.xml" value="0.10047028644719966" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
