@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class UltimasNoticiasActivity extends AppCompatActivity {
 
     API api;
@@ -51,10 +53,25 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     }
 
     protected void createCards() {
-        int x = API.getNumeroDeArtigos();
+        List<Article> listaArticles= API.getArticles();
+
+        int x = listaArticles.size();
 
         for(int i = 0; i < x; i++){
-            createCard();
+           Article article = listaArticles.get(i);
+
+            LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
+
+            LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+            CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
+
+            TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
+            titleTxt.setText(article.getTitulo());
+
+            TextView textTxt = cardNovo.findViewById(R.id.textInCard);
+            textTxt.setText(article.getSource().getName());
+
+            linearLayoutDaScrollView.addView(cardNovo);
         }
     }
 }

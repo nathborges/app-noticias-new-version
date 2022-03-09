@@ -26,7 +26,6 @@ public class InicioActivity extends AppCompatActivity {
 
         API.fetchData();
 
-        //add gif na imagem view
         ImageView imageView = findViewById(R.id.gif);
 
         Glide.with(this)

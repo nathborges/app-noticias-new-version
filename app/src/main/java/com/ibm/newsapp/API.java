@@ -37,8 +37,6 @@ public class API {
                         articles.clear();
                     }
 
-                    setNumeroArtigos(response.body().getTodosOsResultados());
-
 
                     articles = response.body().getArticle();
 
@@ -73,5 +71,13 @@ public class API {
 
     public static int getNumeroDeArtigos() {
         return API.numeroDeArtigos;
+    }
+
+    public static List<Article> getArticles() {
+        return articles;
+    }
+
+    public static void setArticles(List<Article> articles) {
+        API.articles = articles;
     }
 }
