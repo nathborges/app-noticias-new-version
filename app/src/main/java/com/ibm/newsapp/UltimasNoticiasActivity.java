@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class UltimasNoticiasActivity extends AppCompatActivity {
 
+    API api;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,11 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         changeImage(R.drawable.tecnologia, aleatorio);
         changeImage(R.drawable.economia, aleatorio1);
         changeImage(R.drawable.esportes, aleatorio2);
+
+        TextView titleInCard = aleatorio.findViewById(R.id.titleInCard);
+
+        api = new API();
+        api.fetchData(titleInCard);
 
         aleatorio.setOnClickListener(v -> {
             clickSelectedNews();

@@ -10,10 +10,13 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 
+import java.io.IOException;
+
 
 public class InicioActivity extends AppCompatActivity {
 
     float x1, x2, y1, y2;
+    API api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,6 @@ public class InicioActivity extends AppCompatActivity {
                 .asGif()
                 .load(R.raw.subway)
                 .into(imageView);
-
     }
 
     protected void colorBar() {
