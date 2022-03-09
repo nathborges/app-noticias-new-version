@@ -28,27 +28,6 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         createCards();
     }
 
-    protected void changeTitle(CharSequence text, CardView cardView) {
-        TextView textView = cardView.findViewById(R.id.titleInCard);
-        textView.setText(text);
-    }
-
-    protected void changeText(CharSequence text, CardView cardView) {
-        TextView textView = cardView.findViewById(R.id.textInCard);
-        textView.setText(text);
-    }
-
-    protected void changeImage(int imageId, CardView cardView) {
-        ImageView imageView = cardView.findViewById(R.id.imageInCard);
-        imageView.setImageResource(imageId);
-    }
-
-    protected void clickSelectedNews() {
-        Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
-        startActivity(intent);
-    }
-
-
     protected void createCards() {
         List<Article> listaArticles= API.getArticles();
 
