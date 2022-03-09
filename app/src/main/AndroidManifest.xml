@@ -10,38 +10,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppFinal">
         <activity
-            android:name="com.ibm.newsapp.UltimasNoticiasActivity"
+            android:name=".EsqueceuSenhaActivity"
             android:exported="false"
-            android:screenOrientation="sensor">
-        </activity>
+            android:screenOrientation="sensor"
+            />
         <activity
-            android:name="com.ibm.newsapp.CategoriasNoticiasActivity"
+            android:name=".UltimasNoticiasActivity"
             android:exported="false"
-            android:screenOrientation="sensor">
-        </activity>
+            android:screenOrientation="sensor"></activity>
         <activity
-            android:name="com.ibm.newsapp.NoticiaActivity"
+            android:name=".CategoriasNoticiasActivity"
+            android:exported="false"
+            android:screenOrientation="sensor"></activity>
+        <activity
+            android:name=".NoticiaActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.CadastroActivity"
+            android:name=".CadastroActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.InicioActivity"
+            android:name=".InicioActivity"
             android:exported="true"
             android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ibm.newsapp.SaibaMaisActivity"
+            android:name=".SaibaMaisActivity"
             android:exported="false" />
         <activity
-            android:name="com.ibm.newsapp.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="true"
-            android:screenOrientation="sensor">
-        </activity>
+            android:screenOrientation="sensor"></activity>
     </application>
 
 </manifest>

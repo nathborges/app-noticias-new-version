@@ -13,7 +13,7 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText email, senha;
         Button botaoEntrar;
-        TextView cadastre;
+        TextView cadastre, esqueciSenha;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
                 senha = (EditText) findViewById(R.id.text_senha);
                 botaoEntrar = (Button) findViewById(R.id.bt_entrar);
                 cadastre = (TextView) findViewById(R.id.cadastreSe);
+                esqueciSenha =  (TextView) findViewById(R.id.esqueciSenha);
 
                 //BOTAO QUE PERMITE QUE O USER ENTRE NO APLICATIVO ATRAVÉS DE E-MAIL E SENHA
                 botaoEntrar.setOnClickListener(v -> {
@@ -35,7 +36,11 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                         startActivity(intent);
                 });
-
+                //QUANDO O USER CLICAR EM "ESQUECI A SENHA", SERÁ DIRECIONADO PARA A TELA ESQUECEU A SENHA **
+                esqueciSenha.setOnClickListener(v -> {
+                        Intent intent = new Intent(LoginActivity.this, EsqueceuSenhaActivity.class);
+                        startActivity(intent);
+                });
         }
 
         // FUNÇAO QUE VERIFICA SE OS CAMPOS DO E-MAIL E SENHA ESTAO VAZIOS. CASO POSITIVO, EXIBE ALERT. CASO NEGATIVO, DEIXA O USER LOGAR NO APP
