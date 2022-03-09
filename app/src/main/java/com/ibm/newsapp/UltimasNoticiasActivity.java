@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
+import java.io.File;
 import java.util.List;
 
 public class UltimasNoticiasActivity extends AppCompatActivity {
@@ -44,13 +48,6 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    protected void createCard() {
-        LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
-
-        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
-        linearLayoutDaScrollView.addView(aleatorio);
-    }
 
     protected void createCards() {
         List<Article> listaArticles= API.getArticles();
@@ -66,12 +63,27 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
             CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
 
             TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
-            titleTxt.setText(article.getTitulo());
+            titleTxt.setText(stringAfterCheck(article.getTitulo(), "-"));
 
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);
-            textTxt.setText(article.getSource().getName());
+            textTxt.setText(stringAfterCheck(article.getSource().getName(), ".com"));
+
+            ImageView imgView = cardNovo.findViewById(R.id.imageInCard);
+
+            Glide.with(getApplicationContext())
+                    .load(article.getUrlImagem())
+                    .into(imgView);
 
             linearLayoutDaScrollView.addView(cardNovo);
         }
+    }
+
+    protected String stringAfterCheck(String source, String removeString) {
+        if (!source.contains(removeString)){
+            return source;
+        }
+
+        String[] parts = source.split(removeString);
+        return parts[0];
     }
 }
