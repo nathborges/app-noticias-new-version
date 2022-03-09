@@ -6,19 +6,19 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UltimasNoticiasActivity extends AppCompatActivity {
 
-    API api;
+    private static ArrayList dados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,9 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
             CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
 
             TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
-            titleTxt.setText(stringAfterCheck(article.getTitulo(), "-"));
-
+            String tituloDoArtigo = stringAfterCheck(article.getTitulo(), "-");
+            titleTxt.setText(tituloDoArtigo);
+ // [titulo, conteudo, nome, data]
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);
             textTxt.setText(stringAfterCheck(article.getSource().getName(), ".com"));
 
@@ -52,6 +53,8 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
             Glide.with(getApplicationContext())
                     .load(article.getUrlImagem())
                     .into(imgView);
+
+            click(cardNovo, article);
 
             linearLayoutDaScrollView.addView(cardNovo);
         }
@@ -65,4 +68,19 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         String[] parts = source.split(removeString);
         return parts[0];
     }
+
+    protected void click(CardView card, Article article){
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("artigo", article);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+            }
+        });
+    }
+
 }
