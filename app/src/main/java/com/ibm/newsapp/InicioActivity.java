@@ -24,6 +24,8 @@ public class InicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_telainicio);
         colorBar();
 
+        API.fetchData();
+
         //add gif na imagem view
         ImageView imageView = findViewById(R.id.gif);
 

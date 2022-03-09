@@ -13,7 +13,7 @@ import retrofit2.Response;
 public class API {
     public static final String API_KEY = "0c11495d265a4afc96a15b756667b90e";
     private static List<Article> articles = new ArrayList<>();
-    public static int numeroArtigos = 0;
+    public static int numeroDeArtigos = 0;
 
     public static void fetchData() {
 
@@ -36,10 +36,9 @@ public class API {
                     if (!articles.isEmpty()) {
                         articles.clear();
                     }
-                    response.body().getTodosOsResultados();
-                    response.body().getArticle();
 
-                    numeroArtigos = response.body().getTodosOsResultados();
+                    setNumeroArtigos(response.body().getTodosOsResultados());
+
 
                     articles = response.body().getArticle();
 
@@ -68,7 +67,11 @@ public class API {
         });
     }
 
-    public static int getNumeroArtigos() {
-        return numeroArtigos;
+    public static void setNumeroArtigos(int numeroArtigos) {
+        API.numeroDeArtigos = numeroArtigos;
+    }
+
+    public static int getNumeroDeArtigos() {
+        return API.numeroDeArtigos;
     }
 }

@@ -19,13 +19,7 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ultimas_noticias);
 
-        api = new API();
-        api.fetchData();
-        int x = api.getNumeroArtigos();
-
-        for(int i = 0; i < x; i++){
-            createCard();
-        }
+        createCards();
     }
 
     protected void changeTitle(CharSequence text, CardView cardView) {
@@ -54,5 +48,13 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
         CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
         linearLayoutDaScrollView.addView(aleatorio);
+    }
+
+    protected void createCards() {
+        int x = API.getNumeroDeArtigos();
+
+        for(int i = 0; i < x; i++){
+            createCard();
+        }
     }
 }
