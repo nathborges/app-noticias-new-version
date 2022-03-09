@@ -13,8 +13,9 @@ import retrofit2.Response;
 public class API {
     public static final String API_KEY = "0c11495d265a4afc96a15b756667b90e";
     private static List<Article> articles = new ArrayList<>();
+    public static int numeroArtigos = 0;
 
-    public static void fetchData(TextView textViewFake) {
+    public static void fetchData() {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
@@ -28,25 +29,6 @@ public class API {
         call.enqueue(new Callback<News>() {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
-                response.body().getTodosOsResultados();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 if (response.isSuccessful() && response.body().getArticle() != null) {
@@ -54,11 +36,12 @@ public class API {
                     if (!articles.isEmpty()) {
                         articles.clear();
                     }
+                    response.body().getTodosOsResultados();
+                    response.body().getArticle();
+
+                    numeroArtigos = response.body().getTodosOsResultados();
 
                     articles = response.body().getArticle();
-                    String tituloDoArticle = articles.get(0).getTitulo();
-
-                    textViewFake.setText(tituloDoArticle);
 
                 } else {
                     String errorCode;
@@ -83,5 +66,9 @@ public class API {
                 System.out.println("aaaaaaa");
             }
         });
+    }
+
+    public static int getNumeroArtigos() {
+        return numeroArtigos;
     }
 }

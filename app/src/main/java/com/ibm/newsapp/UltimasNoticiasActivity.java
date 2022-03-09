@@ -18,38 +18,14 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ultimas_noticias);
-        LinearLayout childOfScrollView = findViewById(R.id.childOfLastNewsScrollView);
-
-        //todo: contar o número de notícias na api e criar programaticamente os cards
-        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
-        CardView aleatorio1 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView aleatorio2 = (CardView) inflater.inflate(R.layout.container, null);
-
-        changeImage(R.drawable.tecnologia, aleatorio);
-        changeImage(R.drawable.economia, aleatorio1);
-        changeImage(R.drawable.esportes, aleatorio2);
-
-        TextView titleInCard = aleatorio.findViewById(R.id.titleInCard);
 
         api = new API();
-        api.fetchData(titleInCard);
+        api.fetchData();
+        int x = api.getNumeroArtigos();
 
-        aleatorio.setOnClickListener(v -> {
-            clickSelectedNews();
-        });
-
-        aleatorio1.setOnClickListener(v -> {
-            clickSelectedNews();
-        });
-
-        aleatorio2.setOnClickListener(v -> {
-            clickSelectedNews();
-        });
-
-        childOfScrollView.addView(aleatorio);
-        childOfScrollView.addView(aleatorio1);
-        childOfScrollView.addView(aleatorio2);
+        for(int i = 0; i < x; i++){
+            createCard();
+        }
     }
 
     protected void changeTitle(CharSequence text, CardView cardView) {
@@ -70,5 +46,13 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     protected void clickSelectedNews() {
         Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
         startActivity(intent);
+    }
+
+    protected void createCard() {
+        LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
+
+        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+        CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
+        linearLayoutDaScrollView.addView(aleatorio);
     }
 }
