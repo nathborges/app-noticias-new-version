@@ -6,62 +6,81 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class UltimasNoticiasActivity extends AppCompatActivity {
+
+    private static ArrayList dados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ultimas_noticias);
-        LinearLayout childOfScrollView = findViewById(R.id.childOfLastNewsScrollView);
 
-        //todo: contar o número de notícias na api e criar programaticamente os cards
-        LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
-        CardView aleatorio = (CardView) inflater.inflate(R.layout.container, null);
-        CardView aleatorio1 = (CardView) inflater.inflate(R.layout.container, null);
-        CardView aleatorio2 = (CardView) inflater.inflate(R.layout.container, null);
+        createCards();
+    }
 
-        changeImage(R.drawable.tecnologia, aleatorio);
-        changeImage(R.drawable.economia, aleatorio1);
-        changeImage(R.drawable.esportes, aleatorio2);
+    protected void createCards() {
+        List<Article> listaArticles= API.getArticles();
 
-        aleatorio.setOnClickListener(v -> {
-            clickSelectedNews();
+        int x = listaArticles.size();
+
+        for(int i = 0; i < x; i++){
+           Article article = listaArticles.get(i);
+
+            LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
+
+            LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
+            CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
+
+            TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
+            String tituloDoArtigo = stringAfterCheck(article.getTitulo(), "-");
+            titleTxt.setText(tituloDoArtigo);
+ // [titulo, conteudo, nome, data]
+            TextView textTxt = cardNovo.findViewById(R.id.textInCard);
+            textTxt.setText(stringAfterCheck(article.getSource().getName(), ".com"));
+
+            ImageView imgView = cardNovo.findViewById(R.id.imageInCard);
+
+            Glide.with(getApplicationContext())
+                    .load(article.getUrlImagem())
+                    .into(imgView);
+
+            click(cardNovo, article);
+
+            linearLayoutDaScrollView.addView(cardNovo);
+        }
+    }
+
+    protected String stringAfterCheck(String source, String removeString) {
+        if (!source.contains(removeString)){
+            return source;
+        }
+
+        String[] parts = source.split(removeString);
+        return parts[0];
+    }
+
+    protected void click(CardView card, Article article){
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("artigo", article);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+            }
         });
-
-        aleatorio1.setOnClickListener(v -> {
-            clickSelectedNews();
-        });
-
-        aleatorio2.setOnClickListener(v -> {
-            clickSelectedNews();
-        });
-
-        childOfScrollView.addView(aleatorio);
-        childOfScrollView.addView(aleatorio1);
-        childOfScrollView.addView(aleatorio2);
     }
 
-    protected void changeTitle(CharSequence text, CardView cardView) {
-        TextView textView = cardView.findViewById(R.id.titleInCard);
-        textView.setText(text);
-    }
-
-    protected void changeText(CharSequence text, CardView cardView) {
-        TextView textView = cardView.findViewById(R.id.textInCard);
-        textView.setText(text);
-    }
-
-    protected void changeImage(int imageId, CardView cardView) {
-        ImageView imageView = cardView.findViewById(R.id.imageInCard);
-        imageView.setImageResource(imageId);
-    }
-
-    protected void clickSelectedNews() {
-        Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
-        startActivity(intent);
-    }
 }
