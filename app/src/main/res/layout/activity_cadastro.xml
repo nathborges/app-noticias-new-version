@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,130 +8,137 @@
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/buttonCadastro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CadastroActivity">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_entrar3"
-            style="@style/Button"
-            android:layout_width="151dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="32dp"
-            android:fontFamily="@font/visbyextrabold"
-            android:text="Cadastre-se"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:iconTint="@color/darkPurple"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCheckPassword"
-            tools:ignore="MissingConstraints" />
-
         <EditText
-            android:id="@+id/editTextNome"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:ems="10"
+            android:id="@+id/text_nome"
+            style="@style/Edit_Text"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/visbybold"
             android:hint="nome"
-            android:inputType="textPersonName"
-            android:textColorHint="#2B2D41"
-            android:textSize="20sp"
+            android:textColor="@color/prettyBlue"
+            android:textColorHint="@color/prettyBlue"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/criarConta"
-            tools:ignore="TouchTargetSizeCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/facaOLogin" />
 
         <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:ems="10"
+            android:id="@+id/text_email"
+            style="@style/Edit_Text"
+            android:fontFamily="@font/visbybold"
+            android:hint="email@email.com"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/prettyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_nome" />
+
+        <EditText
+            android:id="@+id/text_senha"
+            style="@style/Edit_Text"
             android:fontFamily="@font/visbybold"
             android:hint="senha"
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColorHint="#2B2D41"
-            android:textSize="20sp"
+            android:textColorHint="@color/prettyBlue"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/text_email" />
 
         <EditText
-            android:id="@+id/editTextCheckPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:ems="10"
+            android:id="@+id/text_confirmacao"
+            style="@style/Edit_Text"
             android:fontFamily="@font/visbybold"
             android:hint="confirmar a senha"
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColorHint="#2B2D41"
-            android:textSize="20sp"
+            android:textColorHint="@color/prettyBlue"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-        <EditText
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="12dp"
-            android:ems="10"
-            android:fontFamily="@font/visbybold"
-            android:hint="email@email.com.br"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:textColorHint="#2B2D41"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
-
+            app:layout_constraintTop_toBottomOf="@+id/text_senha" />
 
         <TextView
-            android:id="@+id/criarConta"
-            android:layout_width="283dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="22dp"
-            android:fontFamily="@font/visbybold"
-            android:text="Crie uma nova conta"
+            android:id="@+id/facaOLogin"
+            android:layout_width="332dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/visbysemibold"
+            android:text="Crie uma nova conta para ver nossas notícias."
             android:textAlignment="viewStart"
             android:textColor="@color/purple"
-            android:textSize="28sp"
-            android:textStyle="bold"
+            android:textSize="22sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewola" />
+            app:layout_constraintTop_toBottomOf="@+id/ola" />
 
         <TextView
-            android:id="@+id/textViewola"
-            android:layout_width="95dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="42dp"
+            android:id="@+id/ola"
+            android:layout_width="331dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="68dp"
             android:fontFamily="@font/visbybold"
             android:text="Olá!"
-            android:textAlignment="center"
-            android:textColor="#0D032B"
-            android:textSize="44sp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_cadastro"
+            style="@style/Button"
+            android:layout_width="241dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/visbyextrabold"
+            android:padding="15dp"
+            android:text="Cadastre-se"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            app:iconTint="@color/darkPurple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_confirmacao" />
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/visbyregular"
+            android:text="Voltar"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkPurple"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_cadastro" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

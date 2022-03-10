@@ -1,5 +1,4 @@
 package com.ibm.newsapp;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -30,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
                 text_senha = (EditText) findViewById(R.id.text_senha);
                 bt_entrar = (androidx.appcompat.widget.AppCompatButton) findViewById(R.id.bt_entrar);
                 cadastre = (TextView) findViewById(R.id.cadastreSe);
+                esqueciSenha =  (TextView) findViewById(R.id.esqueciSenha);
 
                 //BOTAO QUE PERMITE QUE O USER ENTRE NO APLICATIVO ATRAVÉS DE E-MAIL E SENHA
                 bt_entrar.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +76,13 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
                         startActivity(intent);
                 });
+
+                //QUANDO O USER CLICAR EM "ESQUECI A SENHA", SERÁ DIRECIONADO PARA A TELA ESQUECEU A SENHA **
+                esqueciSenha.setOnClickListener(v -> {
+                        Intent intent = new Intent(LoginActivity.this, EsqueceuSenhaActivity.class);
+                        startActivity(intent);
+                });
+
         }
 
 }
