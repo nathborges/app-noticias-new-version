@@ -14,9 +14,9 @@
         <entry key="app/src/main/res/layout/activity_cadastro.xml" value="0.10047028644719966" />
         <entry key="app/src/main/res/layout/activity_categorias.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_categorias_noticias.xml" value="0.10047028644719966" />
-        <entry key="app/src/main/res/layout/activity_esqueceu_senha.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_esqueceu_senha.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_noticia.xml" value="0.23645833333333333" />
+        <entry key="app/src/main/res/layout/activity_noticia.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ok.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_player.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/activity_saiba.xml" value="0.25" />
