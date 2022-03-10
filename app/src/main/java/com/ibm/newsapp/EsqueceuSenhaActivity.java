@@ -43,18 +43,15 @@ public class EsqueceuSenhaActivity extends AppCompatActivity {
                 snackbar.show();
             }
             else{
-
                 Snackbar snackbar = Snackbar.make(view,mensagens[1],Snackbar.LENGTH_SHORT);
                 snackbar.setBackgroundTint(Color.rgb(82, 12, 97));
                 snackbar.setTextColor(Color.WHITE);
                 snackbar.show();
-
-
             }
         });
 
         voltar.setOnClickListener(v -> {
-            Intent intent = new Intent(EsqueceuSenhaActivity.this, CadastroActivity.class);
+            Intent intent = new Intent(EsqueceuSenhaActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }

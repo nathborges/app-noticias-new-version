@@ -80,9 +80,6 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
 
-                    //SALVANDO DADOS DO USUÁRIO, COMO O NOME, NO NOSSO CASO.
-                    SaveUserData();
-
                     Snackbar snackbar = Snackbar.make(view,mensagens[1],Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.rgb(82, 12, 97));
                     snackbar.setTextColor(Color.WHITE);
@@ -107,30 +104,6 @@ public class CadastroActivity extends AppCompatActivity {
                     snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }
-            }
-        });
-    }
-
-    private void SaveUserData(){
-
-        String nome = editTextNome.getText().toString();
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        //GUARDANDO OS DADOS DO USUÁRIO USANDO MAP
-        Map<String, Object> usuarios = new HashMap<>();
-        usuarios.put("nome",nome);
-
-        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference documentReference = db.collection("Usuarios").document(userID);
-        documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Log.d("db", "sucesso ao salvar os dados");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("db error", "Erro ao salvar os dados" + e.toString());
             }
         });
     }
