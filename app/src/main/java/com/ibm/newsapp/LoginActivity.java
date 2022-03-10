@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText text_email, text_senha;
         androidx.appcompat.widget.AppCompatButton bt_entrar;
-        TextView cadastre;
+        TextView cadastre, esqueciSenha;
         String[] mensagens = {"Por favor, preencha todos os campos.", "Login realizado com sucesso!"};
 
         @Override
