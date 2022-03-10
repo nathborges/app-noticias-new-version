@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +55,6 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void RegisterUser(View view){
-        String nome = editTextNome.getText().toString();
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
 
@@ -99,8 +95,8 @@ public class CadastroActivity extends AppCompatActivity {
         });
     }
 
-    //TODO: VER PQ NAO TA SALVANDO A COLECAO NO CONSOLE
     private void SaveUserData(){
+
         String nome = editTextNome.getText().toString();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -112,7 +108,7 @@ public class CadastroActivity extends AppCompatActivity {
         DocumentReference documentReference = db.collection("Usuarios").document(userID);
         documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
-            public void onSuccess(Void unused) {
+            public void onSuccess(Void aVoid) {
                 Log.d("db", "sucesso ao salvar os dados");
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -121,8 +117,6 @@ public class CadastroActivity extends AppCompatActivity {
                 Log.d("db error", "Erro ao salvar os dados" + e.toString());
             }
         });
-
-
     }
 
     private void startComponents(){
