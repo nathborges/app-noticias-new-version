@@ -24,7 +24,8 @@
             android:screenOrientation="sensor"></activity>
         <activity
             android:name=".NoticiaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="sensor"/>
         <activity
             android:name=".CadastroActivity"
             android:exported="false"
