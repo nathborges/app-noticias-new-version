@@ -29,7 +29,6 @@ public class CategoriasActivity extends AppCompatActivity {
         click(healthCard, "health");
         click(enterCard, "entertainment");
         click(scienceCard, "science");
-
     }
 
     protected void click(CardView card, String categoryName) {

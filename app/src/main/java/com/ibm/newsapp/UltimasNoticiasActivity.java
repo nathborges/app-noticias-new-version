@@ -51,6 +51,11 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
                continue;
            }
 
+            if (article.getConteudo() == null) {
+                x--;
+                continue;
+            }
+
             LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
 
             LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
