@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EsqueceuSenhaActivity">
+
+        <EditText
+            android:id="@+id/text_email"
+            style="@style/Edit_Text"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/visbybold"
+            android:hint="email@email.com"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/prettyBlue"
+            android:textColorHint="@color/prettyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSobre" />
+
+        <TextView
+            android:id="@+id/txtSobre"
+            android:layout_width="335dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="40dp"
+            android:justificationMode="inter_word"
+            android:fontFamily="@font/visbysemibold"
+            android:text="Caso não lembra da sua senha, insira seu email no campo abaixo que encaminharemos um email para você."
+            android:textAlignment="viewStart"
+            android:textColor="@color/purple"
+            android:textSize="22sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEsqueceu" />
+
+        <TextView
+            android:id="@+id/txtEsqueceu"
+            android:layout_width="331dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="68dp"
+            android:fontFamily="@font/visbybold"
+            android:text="Esqueceu a senha"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_enviar"
+            style="@style/Button"
+            android:layout_width="241dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/visbyextrabold"
+            android:padding="15dp"
+            android:text="Enviar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            app:iconTint="@color/darkPurple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="64dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_enviar" />
+
+        <TextView
+            android:id="@+id/voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            android:fontFamily="@font/visbyregular"
+            android:text="Voltar "
+            android:textAlignment="textEnd"
+            android:textColor="#2E2E2E"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintVertical_bias="0.076" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
