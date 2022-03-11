@@ -1,7 +1,7 @@
-package com.ibm.newsapp;
+package com.ibm.newsapp.api;
 
-import android.widget.TextView;
-
+import com.ibm.newsapp.Article;
+import com.ibm.newsapp.News;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,21 +10,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class API {
-    public static final String API_KEY = "0c11495d265a4afc96a15b756667b90e";
+public class ApiCategory {
     private static List<Article> articles = new ArrayList<>();
-    public static int numeroDeArtigos = 0;
 
-    public static void fetchData() {
+    public static void fetchData(String categoryChoose) {
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
         String country = "br";
-        String language = "pt";
+        String category = categoryChoose;
+
 
         Call<News> call;
 
-        call = apiInterface.getNews(country, API_KEY);
+        call = apiInterface.getNews(country, ApiInterface.API_KEY);
 
         call.enqueue(new Callback<News>() {
             @Override
@@ -36,7 +35,6 @@ public class API {
                     if (!articles.isEmpty()) {
                         articles.clear();
                     }
-
 
                     articles = response.body().getArticle();
 
@@ -65,19 +63,12 @@ public class API {
         });
     }
 
-    public static void setNumeroArtigos(int numeroArtigos) {
-        API.numeroDeArtigos = numeroArtigos;
-    }
-
-    public static int getNumeroDeArtigos() {
-        return API.numeroDeArtigos;
-    }
-
     public static List<Article> getArticles() {
         return articles;
     }
 
     public static void setArticles(List<Article> articles) {
-        API.articles = articles;
+        ApiLastNews.articles = articles;
     }
+
 }

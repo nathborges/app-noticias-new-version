@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ibm.newsapp.api.ApiLastNews;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +38,18 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     }
 
     protected void createCards() {
-        List<Article> listaArticles= API.getArticles();
+        List<Article> listaArticles= ApiLastNews.getArticles();
 
         int x = listaArticles.size();
 
         for(int i = 0; i < x; i++){
            Article article = listaArticles.get(i);
+
+           String source = article.getSource().getName();
+           if (source.equals("YouTube")) {
+               x--;
+               continue;
+           }
 
             LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
 
@@ -52,7 +59,7 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
             TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
             String tituloDoArtigo = stringAfterCheck(article.getTitulo(), "-");
             titleTxt.setText(tituloDoArtigo);
- // [titulo, conteudo, nome, data]
+
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);
             textTxt.setText(stringAfterCheck(article.getSource().getName(), ".com"));
 
@@ -101,7 +108,6 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     protected void checkDataValueAndPutOnBundle(String key, String data, Bundle bundle) {
         if (data == null) {
             return;
-            //todo: show error
         }
         bundle.putString(key, data);
     }

@@ -9,14 +9,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
-
-import java.io.IOException;
+import com.ibm.newsapp.api.ApiLastNews;
 
 
 public class InicioActivity extends AppCompatActivity {
 
     float x1, x2, y1, y2;
-    API api;
+    ApiLastNews api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class InicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_telainicio);
         colorBar();
 
-        API.fetchData();
+        ApiLastNews.fetchData();
 
         ImageView imageView = findViewById(R.id.gif);
 

@@ -34,8 +34,7 @@ public class News {
         this.todosOsResultados = todosOsResultados;
     }
 
-    public List<Article> getArticle() {
-        return article;
+    public List<Article> getArticle() { return article;
     }
 
     public void setArticle(List<Article> article) {
