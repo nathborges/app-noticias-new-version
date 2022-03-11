@@ -1,6 +1,5 @@
 package com.ibm.newsapp;
 
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -9,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Article implements Parcelable {
+public class Article {
 
     @SerializedName("source")
     @Expose
@@ -75,13 +74,4 @@ public class Article implements Parcelable {
         return conteudo;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-
-    }
 }

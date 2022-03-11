@@ -20,6 +20,14 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
 
     private static ArrayList dados = new ArrayList<>();
 
+    public static final String TITLE = "titulo";
+    public static final String URLIMAGE = "urlImage";
+    public static final String AUTHOR = "author";
+    public static final String DATA = "data";
+    public static final String CONTENT = "content";
+    public static final String DESCRIPTION = "description";
+    public static final String URL = "url";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +83,14 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("artigo", article);
+                checkDataValueAndPutOnBundle(URLIMAGE, article.getUrlImagem(), bundle);
+                checkDataValueAndPutOnBundle(AUTHOR, article.getAutor(), bundle);
+                checkDataValueAndPutOnBundle(DATA, article.getDataDePublicacao(), bundle);
+                checkDataValueAndPutOnBundle(TITLE, article.getTitulo(), bundle);
+                checkDataValueAndPutOnBundle(CONTENT, article.getConteudo(), bundle);
+                checkDataValueAndPutOnBundle(DESCRIPTION, article.getDescricao(), bundle);
+                checkDataValueAndPutOnBundle(URL, article.getUrl(), bundle);
+
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -83,4 +98,11 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         });
     }
 
+    protected void checkDataValueAndPutOnBundle(String key, String data, Bundle bundle) {
+        if (data == null) {
+            return;
+            //todo: show error
+        }
+        bundle.putString(key, data);
+    }
 }
