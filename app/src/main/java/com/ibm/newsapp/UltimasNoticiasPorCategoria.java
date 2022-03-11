@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import com.ibm.newsapp.R;
 import com.ibm.newsapp.api.ApiController;
 import com.ibm.newsapp.models.Article;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class UltimasNoticiasPorCategoria extends AppCompatActivity {
@@ -36,16 +39,22 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
         setContentView(R.layout.activity_ultimas_noticias_por_categoria);
 
         listaArticles = ApiController.getAllArticlesByCategory();
-
-        if (listaArticles.size()==0){
+        if (listaArticles.isEmpty()){
             recreate();
             return;
         }
 
-        createCards(listaArticles);
+        String aa = getIntent().getStringExtra("categorySelected");
+
+        if(!aa.equals(ApiController.getCategory())){
+            recreate();
+            return;
+        }
+
+        createCards();
     }
 
-    protected void createCards(List<Article> listaArticles) {
+    protected void createCards() {
         listaArticles = ApiController.getAllArticlesByCategory();
 
         int x = listaArticles.size();
@@ -59,6 +68,8 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
                 continue;
             }
 
+
+
             LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
 
             LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
@@ -69,7 +80,7 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
             titleTxt.setText(tituloDoArtigo);
 
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);
-            textTxt.setText(stringAfterCheck(article.getSource().getName(), ".com"));
+            textTxt.setText(formatDate(article.getDataDePublicacao()));
 
             ImageView imgView = cardNovo.findViewById(R.id.imageInCard);
 
@@ -118,5 +129,22 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
             return;
         }
         bundle.putString(key, data);
+    }
+
+    protected String formatDate(String date){
+        SimpleDateFormat spf;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            spf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            Date newDate;
+            try {
+                newDate = spf.parse(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                return date;
+            }
+            spf = new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm");
+            return spf.format(newDate);
+        }
+        return date;
     }
 }
