@@ -5,7 +5,7 @@
         <item name="android:src">@drawable/tecnologia</item>
     </style>
 
-    <string name="segundo_card">Economia</string>
+    <string name="segundo_card">Negócios</string>
     <style name="imagem_segundo_card" parent="@style/Card_Image_Categories">
         <item name="android:src">@drawable/economia</item>
     </style>
@@ -20,13 +20,13 @@
         <item name="android:src">@drawable/saude</item>
     </style>
 
-    <string name="quinto_card">Política</string>
+    <string name="quinto_card">Entretenimento</string>
     <style name="imagem_quinto_card" parent="@style/Card_Image_Categories">
-        <item name="android:src">@drawable/politica</item>
+        <item name="android:src">@drawable/entretenimento</item>
     </style>
 
-    <string name="sexto_card">Clima</string>
+    <string name="sexto_card">Ciência</string>
     <style name="imagem_sexto_card" parent="@style/Card_Image_Categories">
-        <item name="android:src">@drawable/clima</item>
+        <item name="android:src">@drawable/ciencia</item>
     </style>
 </resources>

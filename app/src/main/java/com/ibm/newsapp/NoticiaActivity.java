@@ -83,6 +83,10 @@ public class NoticiaActivity extends AppCompatActivity {
     }
 
     protected String formatContent(String content){
+        if (content ==  null) {
+            return content;
+        }
+
         String[] parts = content.split("\\[");
         return parts[0] + "Para ler a notícia completa, clique no botão abaixo.";
     }

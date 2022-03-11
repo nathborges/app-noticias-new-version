@@ -12,15 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ibm.newsapp.R;
 import com.ibm.newsapp.api.ApiController;
 import com.ibm.newsapp.models.Article;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UltimasNoticiasActivity extends AppCompatActivity {
-
-    private static List<Article> listaArticles;
+public class UltimasNoticiasPorCategoria extends AppCompatActivity {
 
     public static final String TITLE = "titulo";
     public static final String URLIMAGE = "urlImage";
@@ -29,27 +28,36 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     public static final String CONTENT = "content";
     public static final String DESCRIPTION = "description";
     public static final String URL = "url";
+    public static List<Article> listaArticles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ultimas_noticias);
+        setContentView(R.layout.activity_ultimas_noticias_por_categoria);
 
-        listaArticles = ApiController.getAllArticles();
-        createCards();
+        listaArticles = ApiController.getAllArticlesByCategory();
+
+        if (listaArticles.size()==0){
+            recreate();
+            return;
+        }
+
+        createCards(listaArticles);
     }
 
-    protected void createCards() {
+    protected void createCards(List<Article> listaArticles) {
+        listaArticles = ApiController.getAllArticlesByCategory();
+
         int x = listaArticles.size();
 
         for(int i = 0; i < x; i++){
-           Article article = listaArticles.get(i);
+            Article article = listaArticles.get(i);
 
-           String source = article.getSource().getName();
-           if (source.equals("YouTube")) {
-               x--;
-               continue;
-           }
+            String source = article.getSource().getName();
+            if (source.equals("YouTube")) {
+                x--;
+                continue;
+            }
 
             LinearLayout linearLayoutDaScrollView= findViewById(R.id.childOfLastNewsScrollView);
 
@@ -88,7 +96,7 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UltimasNoticiasActivity.this, NoticiaActivity.class);
+                Intent intent = new Intent(UltimasNoticiasPorCategoria.this, NoticiaActivity.class);
                 Bundle bundle = new Bundle();
                 checkDataValueAndPutOnBundle(URLIMAGE, article.getUrlImagem(), bundle);
                 checkDataValueAndPutOnBundle(AUTHOR, article.getAutor(), bundle);

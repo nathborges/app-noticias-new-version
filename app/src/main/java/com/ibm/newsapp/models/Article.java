@@ -1,4 +1,4 @@
-package com.ibm.newsapp;
+package com.ibm.newsapp.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
