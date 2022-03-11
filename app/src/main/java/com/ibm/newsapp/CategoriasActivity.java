@@ -1,11 +1,10 @@
 package com.ibm.newsapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.ibm.newsapp.api.ApiController;
 
@@ -32,14 +31,11 @@ public class CategoriasActivity extends AppCompatActivity {
     }
 
     protected void click(CardView card, String categoryName) {
-        card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ApiController.fetchAllDataByCategory(categoryName);
-                Intent intent = new Intent(CategoriasActivity.this, UltimasNoticiasPorCategoria.class);
-
-                startActivity(intent);
-            }
+        card.setOnClickListener(v -> {
+            ApiController.fetchAllDataByCategory(categoryName);
+            Intent intent = new Intent(CategoriasActivity.this, UltimasNoticiasPorCategoria.class);
+            intent.putExtra("categorySelected", categoryName);
+            startActivity(intent);
         });
     }
 }

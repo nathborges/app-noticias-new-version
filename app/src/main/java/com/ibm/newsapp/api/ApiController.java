@@ -16,6 +16,7 @@ public class ApiController {
     private static List<Article> allArticlesByCategory = new ArrayList<>();
     private static final String country = "br";
     private static Call<News> call;
+    private static String category;
     private static final ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
 
@@ -69,6 +70,7 @@ public class ApiController {
                 if (response.isSuccessful() && response.body().getArticle() != null) {
 
                     allArticlesByCategory = response.body().getArticle();
+                    category = categoryChosed;
 
                 } else {
                     String errorCode;
@@ -98,6 +100,10 @@ public class ApiController {
 
     public static List<Article> getAllArticles() {
         return allArticles;
+    }
+
+    public static String getCategory() {
+        return category;
     }
 
     public static List<Article> getAllArticlesByCategory() {
