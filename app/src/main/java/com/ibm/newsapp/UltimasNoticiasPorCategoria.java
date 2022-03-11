@@ -8,6 +8,7 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,6 +38,9 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ultimas_noticias_por_categoria);
+
+        Button button = findViewById(R.id.categoriesButton);
+        button.setShadowLayer(2,1,1,getResources().getColor(R.color.purple));
 
         listaArticles = ApiController.getAllArticlesByCategory();
         if (listaArticles.isEmpty()){
@@ -76,7 +80,7 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
             CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
 
             TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
-            String tituloDoArtigo = stringAfterCheck(article.getTitulo(), "-");
+            String tituloDoArtigo = article.getTitulo();
             titleTxt.setText(tituloDoArtigo);
 
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);

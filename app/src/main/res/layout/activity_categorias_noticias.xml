@@ -129,7 +129,6 @@
                     <TextView
                         style="@style/Card_Text_Categories"
                         android:text="@string/quinto_card"
-                        android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="@id/cardCategoryEnterImage" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
