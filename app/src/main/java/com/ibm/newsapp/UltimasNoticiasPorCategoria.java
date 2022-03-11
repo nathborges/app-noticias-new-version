@@ -80,7 +80,7 @@ public class UltimasNoticiasPorCategoria extends AppCompatActivity {
             CardView cardNovo = (CardView) inflater.inflate(R.layout.container, null);
 
             TextView titleTxt = cardNovo.findViewById(R.id.titleInCard);
-            String tituloDoArtigo = stringAfterCheck(article.getTitulo(), "-");
+            String tituloDoArtigo = article.getTitulo();
             titleTxt.setText(tituloDoArtigo);
 
             TextView textTxt = cardNovo.findViewById(R.id.textInCard);
