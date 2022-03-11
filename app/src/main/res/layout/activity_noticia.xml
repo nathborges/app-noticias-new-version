@@ -107,30 +107,32 @@
         android:id="@+id/linearButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintHeight_min="50dp"
         android:orientation="horizontal"
         app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_min="50dp"
         app:layout_constraintHeight_percent="0.09"
-        app:layout_constraintTop_toBottomOf="@+id/scroll"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/scroll">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <androidx.appcompat.widget.AppCompatButton
-            style="@style/Button"
             android:id="@+id/saibaMaisButton"
-            android:layout_height="wrap_content"
+            style="@style/Button"
             android:layout_width="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1"
             android:text="Saiba mais"
-            android:layout_gravity="start"
+            android:padding="-10dp"
             android:textColor="@color/white" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
