@@ -2,6 +2,7 @@ package com.ibm.newsapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -14,6 +15,8 @@ public class CategoriasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias_noticias);
 
+        Button button = findViewById(R.id.categoriesButton);
+        button.setShadowLayer(2,1,1,getResources().getColor(R.color.purple));
 
         CardView techCard = findViewById(R.id.categoryTech);
         CardView businessCard = findViewById(R.id.categoryEconomy);

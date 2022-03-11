@@ -20,7 +20,7 @@
         <item name="android:src">@drawable/saude</item>
     </style>
 
-    <string name="quinto_card">Entretenimento</string>
+    <string name="quinto_card">Cultura</string>
     <style name="imagem_quinto_card" parent="@style/Card_Image_Categories">
         <item name="android:src">@drawable/entretenimento</item>
     </style>

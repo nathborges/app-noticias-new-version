@@ -8,6 +8,7 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,6 +38,9 @@ public class UltimasNoticiasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ultimas_noticias);
+
+        Button button = findViewById(R.id.lastnewsButton);
+        button.setShadowLayer(2,1,1,getResources().getColor(R.color.purple));
 
         listaArticles = ApiController.getAllArticles();
         createCards();
