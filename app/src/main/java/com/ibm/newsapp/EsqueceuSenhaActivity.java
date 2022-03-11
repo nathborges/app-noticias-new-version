@@ -53,5 +53,6 @@ public class EsqueceuSenhaActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
 }
 

@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                                                 try{
                                                                         throw task.getException();
                                                                 } catch (Exception e){
-                                                                        error = e.getMessage();
+                                                                        error =  "Por gentileza verificar senha ou email. Informações incorretas.";
                                                                 }
                                                                 Snackbar snackbar = Snackbar.make(v, error, Snackbar.LENGTH_SHORT);
                                                                 snackbar.setBackgroundTint(Color.rgb(82, 12, 97));
