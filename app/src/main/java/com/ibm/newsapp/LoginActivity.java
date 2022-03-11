@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 public void onComplete(@NonNull Task<AuthResult> task) {
 //
                                                         if (task.isSuccessful()){
-                                                                Intent intent = new Intent(LoginActivity.this, CategoriasNoticiasActivity.class);
+                                                                Intent intent = new Intent(LoginActivity.this, CategoriasActivity.class);
                                                                 startActivity(intent);
                                                                 finish();
                                                         } else {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                                                 try{
                                                                         throw task.getException();
                                                                 } catch (Exception e){
-                                                                        error = "Erro ao efetuar o login.";
+                                                                        error =  "Por gentileza verificar senha ou email. Informações incorretas.";
                                                                 }
                                                                 Snackbar snackbar = Snackbar.make(v, error, Snackbar.LENGTH_SHORT);
                                                                 snackbar.setBackgroundTint(Color.rgb(82, 12, 97));

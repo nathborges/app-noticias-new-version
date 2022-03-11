@@ -1,4 +1,4 @@
-package com.ibm.newsapp;
+package com.ibm.newsapp.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -34,8 +34,7 @@ public class News {
         this.todosOsResultados = todosOsResultados;
     }
 
-    public List<Article> getArticle() {
-        return article;
+    public List<Article> getArticle() { return article;
     }
 
     public void setArticle(List<Article> article) {

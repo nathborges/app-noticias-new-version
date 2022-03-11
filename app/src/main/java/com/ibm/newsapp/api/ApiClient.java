@@ -1,4 +1,4 @@
-package com.ibm.newsapp;
+package com.ibm.newsapp.api;
 
 import java.security.cert.CertificateException;
 

@@ -11,9 +11,9 @@
         android:id="@+id/imageNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintHeight_min="100dp"
-        app:layout_constraintHeight_max="200dp"
         android:scaleType="centerCrop"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_percent="0.4"
         android:src="@drawable/tecnologia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,11 +24,11 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageNews"
         app:layout_constrainedHeight="true"
-        app:layout_constraintTop_toBottomOf="@+id/imageNews"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        >
+
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageNews">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,19 +45,20 @@
                 <!-- linear layout do autor e data -->
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/autor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textSize="15dp"
                     android:fontFamily="@font/visbyregular"
-                    android:text="Autor da notícia"
-                    />
+                    android:text="Autor da notícia" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textSize="15dp"
                     android:fontFamily="@font/visbyregular"
                     android:text="DD/MM/YYYY"
                     android:textAlignment="viewEnd" />
@@ -65,56 +66,71 @@
             </LinearLayout>
 
             <TextView
+                android:paddingHorizontal="20dp"
                 android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/visbysemibold"
                 android:text="Título da notícia"
-                android:textAlignment="center"
-                android:textSize="16sp"
+                android:textAlignment="textStart"
+                android:textSize="25sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
+            <TextView
+                android:paddingHorizontal="20dp"
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/visbymedium"
+                android:text="Descrição da notícia"
+                android:justificationMode="inter_word"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/content_news"
+                android:id="@+id/conteudo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="29dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginRight="21dp"
-                android:fontFamily="@font/visbyregular"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/visbymedium"
                 android:justificationMode="inter_word"
                 android:text="@string/description_news"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintHeight_min="50dp"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@id/scroll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_weight="1">
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintTop_toBottomOf="@+id/scroll"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/Button"
-            android:layout_width="128dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="12dp"
+            android:id="@+id/saibaMaisButton"
+            android:layout_height="wrap_content"
+            android:layout_width="30dp"
             android:layout_weight="1"
             android:text="Saiba mais"
-            android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+            android:layout_gravity="start"
+            android:textColor="@color/white" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            style="@style/Button"
-            android:layout_marginBottom="12dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Voltar"
-            android:textColor="@color/white"></androidx.appcompat.widget.AppCompatButton>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

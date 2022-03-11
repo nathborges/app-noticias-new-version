@@ -24,8 +24,8 @@ public class Menu extends Fragment{
             public void onClick(View view) {
                 Activity thisActivity = getActivity();
                 if (thisActivity != null) {
-                    startActivity(new Intent(thisActivity, UltimasNoticiasActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)); // if needed
                     thisActivity.finish();
+                    startActivity(new Intent(thisActivity, UltimasNoticiasActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
                 }
             }
         });
@@ -36,8 +36,8 @@ public class Menu extends Fragment{
             public void onClick(View view) {
                 Activity thisActivity = getActivity();
                 if (thisActivity != null) {
-                    startActivity(new Intent(thisActivity, CategoriasNoticiasActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)); // if needed
                     thisActivity.finish();
+                    startActivity(new Intent(thisActivity, CategoriasActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)); // if needed
                 }
             }
         });
